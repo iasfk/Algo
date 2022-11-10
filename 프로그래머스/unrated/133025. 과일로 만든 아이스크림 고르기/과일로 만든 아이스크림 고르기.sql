@@ -1,2 +1,2 @@
 -- 코드를 입력하세요
-SELECT f.flavor from first_half f left join icecream_info i on f.flavor = i.flavor where f.total_order > 3000 and i.ingredient_type like 'fruit_based'
+SELECT F.FLAVOR AS FLAVOR FROM FIRST_HALF F INNER JOIN ICECREAM_INFO I ON F.FLAVOR = I.FLAVOR WHERE I.INGREDIENT_TYPE LIKE 'FRUIT_BASED' AND F.TOTAL_ORDER >3000
