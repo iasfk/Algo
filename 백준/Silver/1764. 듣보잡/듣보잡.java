@@ -1,13 +1,12 @@
 
 import java.util.*;
 import java.io.*;
-
 public class Main {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		HashSet<String> set = new HashSet<>();
-		ArrayList<String> list = new ArrayList<>();
+		PriorityQueue<String> list = new PriorityQueue<>();
 		StringBuilder sb = new StringBuilder();
 		
 		int n = Integer.parseInt(st.nextToken());
@@ -22,14 +21,13 @@ public class Main {
 				list.add(str);
 			}
 		}
+
+		System.out.println(list.size());
 		
-		Collections.sort(list);
-		
-		for (String str : list) {
-			sb.append(str).append('\n');
+		while (!list.isEmpty()) {
+			sb.append(list.poll()).append('\n');
 		}
 		
-		System.out.println(list.size());
 		System.out.println(sb);
 	}
 }
