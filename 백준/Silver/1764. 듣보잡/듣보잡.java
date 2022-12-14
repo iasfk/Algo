@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.io.*;
 
@@ -6,7 +7,7 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		HashSet<String> set = new HashSet<>();
-		LinkedList<String> list = new LinkedList<>();
+		ArrayList<String> list = new ArrayList<>();
 		StringBuilder sb = new StringBuilder();
 		
 		int n = Integer.parseInt(st.nextToken());
