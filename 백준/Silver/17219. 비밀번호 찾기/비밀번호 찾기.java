@@ -1,21 +1,32 @@
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		StringBuilder sb = new StringBuilder();
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		String input = br.readLine();
+		StringTokenizer st = new StringTokenizer(input);
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		
 		HashMap<String, String> map = new HashMap<>();
-		for (int i = 0; i<n; i++) {
-			st = new StringTokenizer(br.readLine());
+		for(int i=0; i<N ; i++) {
+			input = br.readLine();
+			st = new StringTokenizer(input);
 			map.put(st.nextToken(), st.nextToken());
 		}
-		for (int i=0; i<m; i++) {
-			sb.append(map.get(br.readLine())).append('\n');
+		for(int i=0; i<M; i++) {
+			input = br.readLine();
+			bw.write(map.get(input));
+			bw.write("\n");
 		}
-		System.out.println(sb);
+		bw.flush();
+		bw.close();
 	}
 }
